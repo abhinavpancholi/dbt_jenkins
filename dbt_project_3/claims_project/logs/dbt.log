@@ -6716,3 +6716,151 @@ Compilation Error
 [0m15:03:22.450141 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110ceca10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1140e0410>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x114146c30>]}
 [0m15:03:22.450457 [debug] [MainThread]: Flushing usage events
 [0m15:03:23.994079 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:11:17.093221 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000174FF5CDFD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001748157D450>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001748157D310>]}
+
+
+============================== 15:11:17.102712 | 871927f0-3bef-4722-a50c-d5ad75e07f48 ==============================
+[0m15:11:17.102712 [info ] [MainThread]: Running with dbt=1.9.3
+[0m15:11:17.103836 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'c:\\Users\\Lenovo\\OneDrive\\Desktop\\postgre_dbt\\dbt\\dbt_project_3\\claims_project', 'version_check': 'True', 'debug': 'False', 'log_path': 'c:\\Users\\Lenovo\\OneDrive\\Desktop\\postgre_dbt\\dbt\\dbt_project_3\\claims_project\\logs', 'warn_error': 'None', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt ', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m15:11:17.547756 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '871927f0-3bef-4722-a50c-d5ad75e07f48', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000174FFC14FC0>]}
+[0m15:11:18.641633 [debug] [MainThread]: Set downloads directory='C:\Users\Lenovo\AppData\Local\Temp\dbt-downloads-lm1voond'
+[0m15:11:18.642580 [debug] [MainThread]: Making package index registry request: GET https://hub.getdbt.com/api/v1/index.json
+[0m15:11:19.434549 [debug] [MainThread]: Response from registry index: GET https://hub.getdbt.com/api/v1/index.json 200
+[0m15:11:19.436072 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json
+[0m15:11:19.909720 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json 200
+[0m15:11:19.916266 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/dbt-labs/audit_helper.json
+[0m15:11:20.366884 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/dbt-labs/audit_helper.json 200
+[0m15:11:20.370856 [info ] [MainThread]: Installing dbt-labs/dbt_utils
+[0m15:11:26.164979 [error] [MainThread]: Encountered an error:
+[WinError 32] The process cannot access the file because it is being used by another process: 'dbt_packages\\dbt-utils-1.1.1\\integration_tests'
+[0m15:11:28.210643 [error] [MainThread]: Traceback (most recent call last):
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python313\Lib\shutil.py", line 856, in move
+    os.rename(src, real_dst)
+    ~~~~~~~~~^^^^^^^^^^^^^^^
+PermissionError: [WinError 32] The process cannot access the file because it is being used by another process: 'dbt_packages\\dbt-utils-1.1.1' -> 'dbt_packages\\dbt_utils'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\cli\requires.py", line 153, in wrapper
+    result, success = func(*args, **kwargs)
+                      ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\cli\requires.py", line 103, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\cli\requires.py", line 218, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\cli\requires.py", line 264, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\cli\main.py", line 455, in deps
+    results = task.run()
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\task\deps.py", line 254, in run
+    package.install(self.project, renderer)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\deps\registry.py", line 63, in install
+    self._install(project, renderer)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\deps\base.py", line 121, in _install
+    connection_exception_retry(download_untar_fn, 5)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt_common\utils\connection.py", line 21, in connection_exception_retry
+    return fn()
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\deps\base.py", line 133, in download_and_untar
+    system.untar_package(tar_path, deps_path, package_name)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt_common\clients\system.py", line 646, in untar_package
+    dbt_common.clients.system.rename(downloaded_path, desired_path, force=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt_common\clients\system.py", line 609, in rename
+    shutil.move(from_path, to_path)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python313\Lib\shutil.py", line 874, in move
+    rmtree(src)
+    ~~~~~~^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python313\Lib\shutil.py", line 790, in rmtree
+    return _rmtree_unsafe(path, onexc)
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python313\Lib\shutil.py", line 621, in _rmtree_unsafe
+    onexc(os.rmdir, fullname, err)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python313\Lib\shutil.py", line 617, in _rmtree_unsafe
+    os.rmdir(fullname)
+    ~~~~~~~~^^^^^^^^^^
+PermissionError: [WinError 32] The process cannot access the file because it is being used by another process: 'dbt_packages\\dbt-utils-1.1.1\\integration_tests'
+
+[0m15:11:28.215418 [debug] [MainThread]: Command `cli deps` failed at 15:11:28.215024 after 13.00 seconds
+[0m15:11:28.216374 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017481D7D590>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017481D7D6A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017481D66950>]}
+[0m15:11:28.217455 [debug] [MainThread]: Flushing usage events
+[0m15:11:29.349611 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m12:22:26.523580 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001849C1A9FD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001849D15D450>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001849D15D310>]}
+
+
+============================== 12:22:26.537968 | 256d3546-f76c-4918-a68d-476a0cfb908b ==============================
+[0m12:22:26.537968 [info ] [MainThread]: Running with dbt=1.9.3
+[0m12:22:26.540046 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'fail_fast': 'False', 'log_path': 'c:\\Users\\Lenovo\\OneDrive\\Desktop\\postgre_dbt\\dbt\\dbt_project_3\\claims_project\\logs', 'profiles_dir': 'c:\\Users\\Lenovo\\OneDrive\\Desktop\\postgre_dbt\\dbt\\dbt_project_3\\claims_project', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'log_format': 'default', 'invocation_command': 'dbt ', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m12:22:26.928521 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '256d3546-f76c-4918-a68d-476a0cfb908b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001849C7E8FC0>]}
+[0m12:22:30.338689 [debug] [MainThread]: Set downloads directory='C:\Users\Lenovo\AppData\Local\Temp\dbt-downloads-uqnv49y4'
+[0m12:22:30.341102 [debug] [MainThread]: Making package index registry request: GET https://hub.getdbt.com/api/v1/index.json
+[0m12:22:30.674668 [debug] [MainThread]: Response from registry index: GET https://hub.getdbt.com/api/v1/index.json 200
+[0m12:22:30.677049 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json
+[0m12:22:30.771465 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json 200
+[0m12:22:30.777584 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/dbt-labs/audit_helper.json
+[0m12:22:31.057991 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/dbt-labs/audit_helper.json 200
+[0m12:22:31.061927 [info ] [MainThread]: Installing dbt-labs/dbt_utils
+[0m12:22:42.650341 [error] [MainThread]: Encountered an error:
+[WinError 32] The process cannot access the file because it is being used by another process: 'dbt_packages\\dbt-utils-1.1.1\\integration_tests'
+[0m12:22:43.057056 [error] [MainThread]: Traceback (most recent call last):
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python313\Lib\shutil.py", line 856, in move
+    os.rename(src, real_dst)
+    ~~~~~~~~~^^^^^^^^^^^^^^^
+PermissionError: [WinError 32] The process cannot access the file because it is being used by another process: 'dbt_packages\\dbt-utils-1.1.1' -> 'dbt_packages\\dbt_utils'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\cli\requires.py", line 153, in wrapper
+    result, success = func(*args, **kwargs)
+                      ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\cli\requires.py", line 103, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\cli\requires.py", line 218, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\cli\requires.py", line 264, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\cli\main.py", line 455, in deps
+    results = task.run()
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\task\deps.py", line 254, in run
+    package.install(self.project, renderer)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\deps\registry.py", line 63, in install
+    self._install(project, renderer)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\deps\base.py", line 121, in _install
+    connection_exception_retry(download_untar_fn, 5)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt_common\utils\connection.py", line 21, in connection_exception_retry
+    return fn()
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\deps\base.py", line 133, in download_and_untar
+    system.untar_package(tar_path, deps_path, package_name)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt_common\clients\system.py", line 646, in untar_package
+    dbt_common.clients.system.rename(downloaded_path, desired_path, force=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt_common\clients\system.py", line 609, in rename
+    shutil.move(from_path, to_path)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python313\Lib\shutil.py", line 874, in move
+    rmtree(src)
+    ~~~~~~^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python313\Lib\shutil.py", line 790, in rmtree
+    return _rmtree_unsafe(path, onexc)
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python313\Lib\shutil.py", line 621, in _rmtree_unsafe
+    onexc(os.rmdir, fullname, err)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python313\Lib\shutil.py", line 617, in _rmtree_unsafe
+    os.rmdir(fullname)
+    ~~~~~~~~^^^^^^^^^^
+PermissionError: [WinError 32] The process cannot access the file because it is being used by another process: 'dbt_packages\\dbt-utils-1.1.1\\integration_tests'
+
+[0m12:22:43.124620 [debug] [MainThread]: Command `cli deps` failed at 12:22:43.124293 after 17.45 seconds
+[0m12:22:43.125401 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001849D9A96A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001849D9A97B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001849D95E950>]}
+[0m12:22:43.126109 [debug] [MainThread]: Flushing usage events
+[0m12:22:44.226706 [debug] [MainThread]: An error was encountered while trying to flush usage events
